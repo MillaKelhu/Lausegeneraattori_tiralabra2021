@@ -2,6 +2,7 @@
 
 Tällä viikolla aika on käytetty lähinnä sen miettimiseen, _mikä_ projekti toteutetaan, ja jonkin verran _miten_. Viimeksi mainittuun liittyen, olen ottanut alustavasti selvää trie-tietorakenteesta ja Markovin ketjuista.
 Lisäksi ollaan luotu projekti ja alustavaa dokumentaatiota. Ohjelma ei sinällään ole edistynyt vielä minnekään, vaan se on vasta suunnitteluvaiheessa.
+Tunteja käytettiin yhteensä tällä viikolla n. 5.
 
 ### Epäselvyyksiä
 * Mitä kaikkia tietorakenteita ja algoritmeja lopulta tähän tarvitaan.
