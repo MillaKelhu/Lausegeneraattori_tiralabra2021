@@ -11,6 +11,7 @@ Triestä on tullut luettua taaskin lisää, ja sanakirjojen käyttö on tullut t
 
 ### Epäselvyyksiä
 * Mitä seuraavaksi?
+* Miten luokkaa Trie pitäisi kehittää?
 * Miten pysyväistallennus pitäisi hoitaa?
 * Onko lauseen lisääminen tällä nykyisellä tavalla järkevää, vai saisiko sen tehokkaammaksikin?
 
