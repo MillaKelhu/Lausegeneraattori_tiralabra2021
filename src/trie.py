@@ -42,18 +42,8 @@ class Trie:
 
         if sana not in vanhempi:
             vanhempi[sana] = {}
-        
+
         if sana != lapsi:
             self.lisaa_lapsi(lapsi, vanhempi[sana])
 
         return True
-
-if __name__ == "__main__":
-    puu = Trie()
-    print(puu.hae_puu())
-    puu.lisaa_lapsi("Punainen kissa hyppäsi pöydälle")
-    print(puu.hae_puu())
-    puu.lisaa_lapsi("Punainen kuu on kummallinen näky")
-    print(puu.hae_puu())
-    puu.lisaa_lapsi("Punainen kissa joi maitoa")
-    print(puu.hae_puu())

@@ -14,21 +14,24 @@ class TestTrie(unittest.TestCase):
         self.puu.lisaa_lapsi('Punainen kissa hyppäsi pöydälle')
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'Punainen': {'kissa': {'hyppäsi': {'pöydälle': {}}}}})
+        self.assertEqual(
+            vastaus, {'Punainen': {'kissa': {'hyppäsi': {'pöydälle': {}}}}})
 
     def test_lisaa_lapsi_lisaa_yli_yksi_lausetta_oikein(self):
         self.puu.lisaa_lapsi('Punainen kissa hyppäsi pöydälle')
         self.puu.lisaa_lapsi('Punainen kuu on kummallinen näky')
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'Punainen': {'kissa': {'hyppäsi': {'pöydälle': {}}}, 'kuu': {'on': {'kummallinen': {'näky': {}}}}}})
+        self.assertEqual(vastaus, {'Punainen': {'kissa': {'hyppäsi': {
+                         'pöydälle': {}}}, 'kuu': {'on': {'kummallinen': {'näky': {}}}}}})
 
     def test_lisaa_lapsi_ei_lisaa_kaksoiskappaleita(self):
         self.puu.lisaa_lapsi('Punainen kissa hyppäsi pöydälle')
         self.puu.lisaa_lapsi('Punainen kissa hyppäsi pöydälle')
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'Punainen': {'kissa': {'hyppäsi': {'pöydälle': {}}}}})
+        self.assertEqual(
+            vastaus, {'Punainen': {'kissa': {'hyppäsi': {'pöydälle': {}}}}})
 
     def tyhjenna_puu_tyhjentaa_puun_oikein(self):
         self.puu.lisaa_lapsi('Punainen kissa hyppäsi pöydälle')
@@ -36,5 +39,3 @@ class TestTrie(unittest.TestCase):
         vastaus = self.puu.hae_puu()
 
         self.assertEqual(vastaus, {})
-
-
