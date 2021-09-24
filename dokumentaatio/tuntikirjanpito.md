@@ -8,5 +8,7 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 17.9. | 5 | Jatketaan edellisestä, mutta tajutaan, että aiemmin rakennettu on toimimatonta ja aloitetaan alusta.
 18.9. | 4 | Toistetaan eilinen
 18.9. | 1 | Lisätään pylint, testikattavuuden seuranta, etc.
-
-Yht: | 21 |
+23.9. | 2 | Lisätään funktio lauseen etsimiseksi, kirjoitetaan lisää testejä
+23.9. | 4 | Tajutaan että ollaan taas menty vähän metsään, ja aletaan rakentelemaan tietorakennetta käytännössä melkein uusiksi. Muutama funktio saattaa kuitenkin olla säilytyskelpoinen.
+24.9. | 2 | Jatketaan edellisestä, kirjoitetaan funktioita ja testejä uusiksi, tehdään kunnollisempi tietorakenne
+Yht: | 29 |
