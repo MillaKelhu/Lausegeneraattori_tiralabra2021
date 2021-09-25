@@ -1,6 +1,9 @@
 # Viikkoraportti 3
 
-Tällä viikolla kirjoitettiin aika paljon asioita uusiksi. Trielle tehtiin (toivottavasti) kunnollisempi tietorakenne, ja kirjoitettiin ainakin alustava algoritmi, joka etsii lauseita triestä. Testauksesta saatiin kattava vain trie- ja triesolmu-tietorakenteille, mutta testauksen tekeminen markovin ketjulle ehti jäädä täysin vaiheeseen. Tunteja on tällä viikolla käytetty 13.
+Tällä viikolla kirjoitettiin aika paljon asioita uusiksi. Trielle tehtiin (toivottavasti) kunnollisempi tietorakenne, ja kirjoitettiin ainakin alustava algoritmi, joka etsii lauseita triestä. Testauksesta saatiin kattava vain trie- ja triesolmu-tietorakenteille, mutta testauksen tekeminen markovin ketjulle ehti jäädä täysin vaiheeseen, koska allekirjoittanut ei ole varma, miten se tehtäisiin järkevästi. Alla on testikattavuus: 
+![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/testikattavuus_vko3.png)
+
+Tunteja on tällä viikolla käytetty 13.
 
 ### Missä vaiheessa ollaan
 Kasassa on nyt trie-tietorakenne, joka toivottavasti ajaa asiansa loppukehityksen ajan, lukuun ottamatta pieniä muutoksia (esim. lauseen pilkkominen siirretään omalle funktiolleen). Lisäksi nyt on tehtynä algoritmi lauseen poimimiseen triestä. 
