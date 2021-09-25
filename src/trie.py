@@ -1,7 +1,7 @@
 from triesolmu import TrieSolmu
 
 
-class Trie():
+class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
     """
 
@@ -9,7 +9,7 @@ class Trie():
         """Luokan konstruktori, joka luo juuren trie-puulle TrieSolmuna.
         """
 
-        self.__juuri = TrieSolmu()
+        super().__init__()
 
     def hae_puu(self, juuri=None):
         """Palauttaa puun sisäkkäisenä sanakirjana.
@@ -24,7 +24,7 @@ class Trie():
         """
 
         if juuri is None:
-            juuri = self.__juuri
+            juuri = self
 
         palautus = {}
         lapset = juuri.hae_solmu()[1]
@@ -42,7 +42,8 @@ class Trie():
             bool: Palauttaa arvon True.
         """
 
-        self.__juuri = TrieSolmu()
+        self.__lapset = {}
+        self.__laskuri = 1
         return True
 
     def lisaa_lause(self, lause: str):
@@ -75,7 +76,7 @@ class Trie():
         """
 
         if juuri is None:
-            juuri = self.__juuri
+            juuri = self
 
         sana = lause
 
@@ -108,7 +109,7 @@ class Trie():
             bool: Palauttaa joko arvon False tai True rippuen siitä, onko lause sanakirjassa vai ei.
         """
         if juuri is None:
-            juuri = self.__juuri
+            juuri = self
 
         sana = lause
 
@@ -127,3 +128,6 @@ class Trie():
             return self.etsi_lause(lause, uusi_juuri)
 
         return True
+
+
+default_trie = Trie()

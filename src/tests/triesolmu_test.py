@@ -2,7 +2,7 @@ import unittest
 from triesolmu import TrieSolmu
 
 
-class TestTrie(unittest.TestCase):
+class TestTrieSolmu(unittest.TestCase):
     def setUp(self):
         self.solmu = TrieSolmu()
 
@@ -28,3 +28,11 @@ class TestTrie(unittest.TestCase):
         vastaus = self.solmu.lisaa_lapsi("punainen")
 
         self.assertEqual(vastaus, False)
+
+    def test_lasten_todennakoisyydet_palauttaa_listan_oikein(self):
+        self.solmu.lisaa_lapsi("punainen")
+        self.solmu.lisaa_lapsi("kissa")
+        self.solmu.lisaa_lapsi("ajoi")
+        vastaus = self.solmu.lasten_todennakoisyydet()
+
+        self.assertEqual(vastaus, [1, 1, 1])

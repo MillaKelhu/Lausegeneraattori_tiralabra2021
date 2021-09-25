@@ -58,3 +58,13 @@ class TrieSolmu:
             return True
 
         return False
+
+    def lasten_todennakoisyydet(self):
+        """Palauttaa solmun lasten laskurit, joita käytetään sitten painoina todennäköisyyksiä laskiessa.
+
+        Returns:
+            lista: Lista, jossa on solmun lasten laskurit.
+        """
+        laskurit = [self.hae_lapsi(lapsi).hae_solmu()[0]
+                    for lapsi in self.__lapset]
+        return laskurit
