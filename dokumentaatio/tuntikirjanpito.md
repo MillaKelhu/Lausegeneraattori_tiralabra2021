@@ -13,4 +13,5 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 24.9. | 2 | Jatketaan edellisestä, kirjoitetaan funktioita ja testejä uusiksi, tehdään kunnollisempi tietorakenne.
 24.9. | 3 | Kirjoitetaan ja pohditaan algoritmia, joka osaisi etsiä lauseita triestä.
 25.9. | 2 | Kirjoitettiin algoritmi, joka etsii lauseita triestä.
-Yht: | 34 |
+30.9. | 4 | Kirjoitetaan funktioita, joita tullaan käyttämään syötetyn tekstimassan siistimiseen ja paloitteluun.
+Yht: | 38 |
