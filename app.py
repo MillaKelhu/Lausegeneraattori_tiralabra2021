@@ -30,4 +30,4 @@ def index():
         markov = Markov(trie)
         lause = markov.muodosta_lause(maksimi_pituus)
 
-    return render_template("index.html", lause=lause)
+    return render_template("index.html", teksti=teksti, lause=lause)
