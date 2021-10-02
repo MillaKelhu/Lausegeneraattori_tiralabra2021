@@ -22,8 +22,8 @@ def index():
         else:
             lauseet_virkkeiksi = False
 
-        teksti = tekstin_siivous(teksti, lauseet_virkkeiksi)
-        lauseet = tekstin_paloittelu(teksti, markov_aste)
+        siivottu_teksti = tekstin_siivous(teksti, lauseet_virkkeiksi)
+        lauseet = tekstin_paloittelu(siivottu_teksti, markov_aste)
         trie = Trie()
         trie.lisaa_lauseita(lauseet)
 
