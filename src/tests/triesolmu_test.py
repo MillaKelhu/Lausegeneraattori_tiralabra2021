@@ -1,5 +1,5 @@
 import unittest
-from triesolmu import TrieSolmu
+from src.triesolmu import TrieSolmu
 
 
 class TestTrieSolmu(unittest.TestCase):

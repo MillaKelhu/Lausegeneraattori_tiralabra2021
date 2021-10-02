@@ -1,4 +1,4 @@
-from trie import Trie, default_trie
+from src.trie import Trie, default_trie
 import random
 
 
@@ -21,7 +21,7 @@ class Markov:
             n (int, vapaaehtoinen): Lauseen maksimipituus. Oletusarvona on 6.
 
         Returns:
-            str: Muodostettu lause
+            str: Muodostettu lause, jonka alkukirjain on suurennettu ja loppuun on lisätty piste.
         """
         lause = ""
         solmu = self.__trie
@@ -31,13 +31,17 @@ class Markov:
             solmu = uusi_solmu
             if sana:
                 lause += sana
-                if i < pituus-1:
-                    lause += " "
+                lause += " "
             if solmu:
                 continue
             break
+        
+        if lause[-1] == " ":
+            lause = lause[:-1]
 
-        return lause.capitalize()
+        lause = lause[0].upper() + lause[1:] + "."
+
+        return lause
 
     def __valitse_sana(self, solmu):
         """Valitsee annetun solmun lapsista uuden sanan sekä mahdollisesti solmun, johon seuraavaksi siirrytään.
@@ -68,26 +72,3 @@ class Markov:
             return sana, uusi_solmu
 
         return None, None
-
-
-if __name__ == "__main__":
-    trie = Trie()
-    trie.lisaa_lause("Punainen kissa")
-    trie.lisaa_lause("Musta kissa")
-    trie.lisaa_lause("Oranssi kissa")
-    trie.lisaa_lause("Punainen koira")
-    trie.lisaa_lause("Ruskea koira")
-    trie.lisaa_lause("kissa hyppäsi")
-    trie.lisaa_lause("kissa meni")
-    trie.lisaa_lause("kissa kiipesi")
-    trie.lisaa_lause("koira meni")
-    trie.lisaa_lause("koira kiipesi")
-    trie.lisaa_lause("hyppäsi pöydälle")
-    trie.lisaa_lause("meni kylpyyn")
-    trie.lisaa_lause("meni kauppaan")
-    trie.lisaa_lause("kiipesi puuhun")
-    trie.lisaa_lause("kiipesi katolle")
-    markov = Markov(trie)
-    print(markov.muodosta_lause())
-    print(markov.muodosta_lause())
-    print(markov.muodosta_lause())

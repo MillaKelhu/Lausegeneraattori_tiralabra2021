@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lausegeneraattori</title>
+</head>
+
+<body>
+
+    <h1>Lausegeneraattori</h1>
+
+    <form action="/" method="POST">
+    Anna teksti:
+    <p>
+        <textarea name="teksti" id="comment" rows="30" cols="100"></textarea>
+    </p>
+    Muuta kaikki lauseet virkkeiksi?
+    <p>
+        <input type="radio" name="lauseet_virkkeiksi" value="False" checked="checked"> Ei
+        <input type="radio" name="lauseet_virkkeiksi" value="True"> Kyllä
+    </p>
+    Markovin ketjun aste:
+    <p>
+        <input type="radio" name="markov_aste" value="2" checked="checked"> 2
+        <input type="radio" name="markov_aste" value="3"> 3
+        <input type="radio" name="markov_aste" value="4"> 4
+    </p>
+    Lauseen maksimipituus:
+    <p>
+        <input type="radio" name="pituus" value="6" checked="checked"> 6
+        <input type="radio" name="pituus" value="7"> 7
+        <input type="radio" name="pituus" value="8"> 8
+        <input type="radio" name="pituus" value="9"> 9
+        <input type="radio" name="pituus" value="10"> 10
+        <input type="radio" name="pituus" value="12"> 12
+        <input type="radio" name="pituus" value="13"> 13
+        <input type="radio" name="pituus" value="14"> 14
+    </p>
+    <input type="submit" value="Generoi lause">
+    </form>
+
+    {{ lause }}
+
+</body>

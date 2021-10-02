@@ -1,5 +1,4 @@
-from triesolmu import TrieSolmu
-
+from src.triesolmu import TrieSolmu
 
 class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
@@ -46,19 +45,19 @@ class Trie(TrieSolmu):
         self.__laskuri = 1
         return True
 
-    def lisaa_lause(self, lause: str):
-        """Näkyvä metodi, jolla lause lisätään trie-puuhun solmuiksi.
-        Tällä hetkellä erikoismerkkejä ei huomioida laisinkaan.
+    def lisaa_lauseita(self, lauseet: list):
+        """Näkyvä metodi, jolla lauseita lisätään trie-puuhun solmuiksi.
 
         Args:
-            lapsi (str): Lause, joka halutaan lisätä trie-puuhun.
+            lauseet (list): Lauseet tai lauseiden palat, jotka halutaan lisätä trie-puuhun.
 
         Returns:
-            bool: Palauttaa joko arvon True tai False riippuen siitä,
-            onko lause voitu lisätä puuhun.
+            bool: Palauttaa True, kun lista on käyty läpi.
         """
-
-        return self.__lisaa_lause(lause)
+        for lause in lauseet:
+            self.__lisaa_lause(lause)
+        
+        return True
 
     def __lisaa_lause(self, lause: str, juuri=None):
         """Lisää lauseen trie-puuhun solmuiksi.
