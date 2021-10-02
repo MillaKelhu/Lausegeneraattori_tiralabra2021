@@ -2,6 +2,9 @@
 
 Tällä viikolla tehtiin funktiot tekstin siistimiseen ja paloitteluun. Lisäksi tehtiin ohjelman tarkasteluun oma sivunsa, joka lisättiin herokuun, jotta ohjelman toiminnan tarkasteleminen kävisi helpommin. Sinne pääsee [täältä](https://lausegeneraattori.herokuapp.com/). Eli ollaan nyt alettu tarkemmin tarkastelemaan, mitä lauseita ohjelma saa aikaiseksi eri syötteillä - vai saako se aikaiseksi mitään.   
 
+Testejä kirjoitettiin lisää, mutta ei lauseita poimivalle luokalle, sillä päätettiin hoitaa tämän testailu lähinnä käsin. Alla on nykyinen testikattavuus:
+![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/testikattavuus_vko4.png)
+
 Lisäksi useita luokkia piti korjailla sieltä täältä, koska virheitä löytyi jatkuvasti.
 
 Tunteja on tällä viikolla käytetty 13.
