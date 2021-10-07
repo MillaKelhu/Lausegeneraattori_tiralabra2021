@@ -16,7 +16,7 @@ Kasassa on nyt ohjelman ydintoiminta. Kaikki ei toimi tietenkään aivan virheet
 Opin lisää merkkijonojen muokkaamisesta ja sovelluksen pystyyn pistämisestä.
 
 ### Epäselvyyksiä
-* Voisiko testin siistimisen ja pilkkomisen tehdä jotenkin tehokkaamminkin?
+* Voisiko tekstin siistimisen ja pilkkomisen tehdä jotenkin tehokkaamminkin?
 * Miksi lauseita poimiva algoritmi tekee välillä niin kummallisen lyhyitä lauseita?
 
 ### Ensi viikolla
