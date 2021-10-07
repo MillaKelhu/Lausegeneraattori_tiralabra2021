@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-from src.tekstinkasittely import tekstin_siivous, tekstin_paloittelu
-from src.triesolmu import TrieSolmu
 from src.trie import Trie
 from src.markov import Markov
 
@@ -9,23 +7,22 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
 
+    teksti = ""
     lause = ""
 
     if request.method == "POST":
         teksti = request.form["teksti"]
         lauseet_virkkeiksi = request.form["lauseet_virkkeiksi"]
-        markov_aste = int(request.form["markov_aste"])
+        tallennuspituus = int(request.form["markov_aste"])+1
         maksimi_pituus = int(request.form["pituus"])
 
         if lauseet_virkkeiksi == "True":
             lauseet_virkkeiksi = True
         else:
             lauseet_virkkeiksi = False
-
-        siivottu_teksti = tekstin_siivous(teksti, lauseet_virkkeiksi)
-        lauseet = tekstin_paloittelu(siivottu_teksti, markov_aste)
+        
         trie = Trie()
-        trie.lisaa_lauseita(lauseet)
+        trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
 
         markov = Markov(trie)
         lause = markov.muodosta_lause(maksimi_pituus)

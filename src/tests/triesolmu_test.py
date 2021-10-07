@@ -11,6 +11,11 @@ class TestTrieSolmu(unittest.TestCase):
 
         self.assertEqual(vastaus, (1, {}))
 
+    def test_hae_lapsi_palauttaa_None_kun_etsitaan_olematonta_lasta(self):
+        vastaus = self.solmu.hae_lapsi("punainen")
+
+        self.assertEqual(vastaus, None)
+
     def test_lisaa_lapsi_lisaa_uuden_avaimen(self):
         print(self.solmu.lisaa_lapsi("punainen"))
         vastaus = bool("punainen" in self.solmu.hae_solmu()[1])

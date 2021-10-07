@@ -1,4 +1,5 @@
 from src.triesolmu import TrieSolmu
+from src.tekstinkasittely import tekstin_siivous
 
 class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
@@ -45,28 +46,41 @@ class Trie(TrieSolmu):
         self.__laskuri = 1
         return True
 
-    def lisaa_lauseita(self, lauseet: list):
-        """Näkyvä metodi, jolla lauseita lisätään trie-puuhun solmuiksi.
+    def lisaa_tekstia(self, teksti: str, tallennuspituus: int=3, kaikki_lauseet_virkkeiksi: bool=False):
+        """Näkyvä metodi, jolla tekstiä lisätään puuhun. Metodi ensin siivoaa ja paloittelee tekstin virkkeiksi annettujen parametrien mukaan. Sen jälkeen jokainen lause paloitellaan listaksi sanoja, jotka tallennetaan halutun pituisina pätkinä trie-puuhun.
 
         Args:
-            lauseet (list): Lauseet tai lauseiden palat, jotka halutaan lisätä trie-puuhun.
+            teksti (str): Teksti merkkijonomuodossa.
+            tallennuspituus (int, vapaaehtoinen): Tallennettavien tekstipätkien pituus sanoina. Oletusarvona on 3.
+            kaikki_lauseet_virkkeiksi (bool, vapaaehtoinen): Jos True, pilkkuja kohdellaan kuten pisteitä, ja kaikki sivu- ja päälauseet (mutta myös luettelot) muutetaan omiksi virkkeikseen. Oletusarvona on False, eli pilkut vain poistetaan eikä uusia virkkeitä synny.
 
         Returns:
-            bool: Palauttaa True, kun lista on käyty läpi.
+            bool: Palauttaa arvon True kun teksti on käyty läpi ja lisätty trieen.
         """
-        for lause in lauseet:
-            self.__lisaa_lause(lause)
-        
+
+        siivottu_teksti = tekstin_siivous(teksti, kaikki_lauseet_virkkeiksi)
+
+        virkkeet = siivottu_teksti.split('$')
+
+        for virke in virkkeet:
+            sanat = virke.split()
+            n = len(sanat)
+            if n <= tallennuspituus:
+                self.__lisaa_sanoja(sanat)
+                
+            else:
+                for i in range(n-tallennuspituus+1):
+                    self.__lisaa_sanoja(sanat[i:i+tallennuspituus])
+
         return True
 
-    def __lisaa_lause(self, lause: str, juuri=None):
-        """Lisää lauseen trie-puuhun solmuiksi.
+    def __lisaa_sanoja(self, sanat: list, juuri=None):
+        """Lisää sanoja trie-puuhun solmuiksi.
         Piilotettu funktio, koska puu menisi sotkuun,
-        jos juuren, johon lause lisätään, saisi valita.
-        Tällä hetkellä erikoismerkkejä ei huomioida laisinkaan.
+        jos juuren, josta lähtien sanat lisätään, saisi valita.
 
         Args:
-            lause (str): Lause, joka halutaan lisätä trie-puuhun.
+            sanat (list): sanat, jotka halutaan lisätä trie-puuhun.
             juuri (TrieSolmu, vapaaehtoinen): TrieSolmu, johon lausetta ollaan
             lisäämässä. Oletusarvo on None.
 
@@ -77,56 +91,20 @@ class Trie(TrieSolmu):
         if juuri is None:
             juuri = self
 
-        sana = lause
-
-        for i in range(len(lause)):
-            if lause[i] == ' ':
-                sana = lause[:i]
-                lause = lause[i+1:]
-                break
-
+        sana = sanat[0]
+        
         lapsi_lisatty = juuri.lisaa_lapsi(sana)
 
-        if lapsi_lisatty and sana == lause:
+        if lapsi_lisatty and len(sanat) == 1:
             return True
 
-        elif sana == lause:
+        elif len(sanat) == 1:
             return False
 
-        uusi_juuri = juuri.hae_lapsi(sana)
-        return self.__lisaa_lause(lause, uusi_juuri)
-
-    def etsi_lause(self, lause: str, juuri=None):
-        """Etsii, onko jokin tietty lause olemassa trie-puussa.
-
-        Args:
-            lause (str): Lause, joka halutaan etsiä trie-puusta.
-            juuri (TrieSolmu, vapaaehtoinen): TrieSolmu, josta lähtien lausetta etsitään.
-            Oletusarvo on None.
-
-        Returns:
-            bool: Palauttaa joko arvon False tai True rippuen siitä, onko lause sanakirjassa vai ei.
-        """
-        if juuri is None:
-            juuri = self
-
-        sana = lause
-
-        for i in range(len(lause)):
-            if lause[i] == ' ':
-                sana = lause[:i]
-                lause = lause[i+1:]
-                break
+        sanat = sanat[1:]
 
         uusi_juuri = juuri.hae_lapsi(sana)
-
-        if uusi_juuri is None:
-            return False
-
-        if sana != lause and uusi_juuri is not None:
-            return self.etsi_lause(lause, uusi_juuri)
-
-        return True
+        return self.__lisaa_sanoja(sanat, uusi_juuri)
 
 
 default_trie = Trie()
