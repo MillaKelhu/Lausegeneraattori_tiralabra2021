@@ -17,4 +17,7 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 2.9. | 3 | Korjataan e.m. funktioita, tehdään testejä.
 2.9. | 2 | Tehdään käyttöliittymä, jotta ohjelmaa pystyy paremmin tarkastelemaan.
 2.9. | 4 | Korjaillaan virheitä, joita on rutkasti, kirjoitellaan joitakin asioita uusiksi, jne.
-Yht: | 47 |
+7.9. | 1 | Korjataan funktio, joka paloittelee tekstin lauseiksi ja lauseet sanoiksi - siirrettiin tämä trie-luokkaan.
+7.9. | 3 | Korjattiin virheitä.
+8.9. | 1 | Korjattiin virheitä.
+Yht: | 52 |

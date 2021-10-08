@@ -61,16 +61,16 @@ class Trie(TrieSolmu):
         siivottu_teksti = tekstin_siivous(teksti, kaikki_lauseet_virkkeiksi)
 
         virkkeet = siivottu_teksti.split('$')
-
         for virke in virkkeet:
             sanat = virke.split()
-            n = len(sanat)
-            if n <= tallennuspituus:
-                self.__lisaa_sanoja(sanat)
-                
-            else:
-                for i in range(n-tallennuspituus+1):
-                    self.__lisaa_sanoja(sanat[i:i+tallennuspituus])
+            if sanat != []:
+                n = len(sanat)
+                if n <= tallennuspituus:
+                    self.__lisaa_sanoja(sanat)
+
+                else:
+                    for i in range(n-tallennuspituus+1):
+                        self.__lisaa_sanoja(sanat[i:i+tallennuspituus])
 
         return True
 

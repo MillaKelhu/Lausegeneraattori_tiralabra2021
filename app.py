@@ -20,10 +20,10 @@ def index():
             lauseet_virkkeiksi = True
         else:
             lauseet_virkkeiksi = False
-        
+
         trie = Trie()
         trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
-
+        
         markov = Markov(trie)
         lause = markov.muodosta_lause(maksimi_pituus)
 

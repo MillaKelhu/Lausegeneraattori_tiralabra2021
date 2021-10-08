@@ -16,7 +16,7 @@ def tekstin_siivous(teksti: str, kaikki_lauseet_virkkeiksi: bool=False):
     """
 
 
-    siivottu_teksti = teksti.replace("\n", " ")
+    siivottu_teksti = teksti.replace("\r\n", " ")
     if kaikki_lauseet_virkkeiksi:
         for merkki in isot_valimerkit+",":
             siivottu_teksti = siivottu_teksti.replace(merkki, ".")
