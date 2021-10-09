@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from src.trie import Trie
-from src.lauseenmuodostus import *
+from src.lauseenmuodostus import Lauseenmuodostus
 
 app = Flask(__name__)
 
@@ -24,6 +24,7 @@ def index():
         trie = Trie()
         trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
         
-        lause = muodosta_lause(maksimi_pituus)
+        lauseenmuodostus = Lauseenmuodostus(trie)
+        lause = lauseenmuodostus.muodosta_lause(maksimi_pituus)
 
     return render_template("index.html", teksti=teksti, lause=lause)

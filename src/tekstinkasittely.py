@@ -1,7 +1,7 @@
 import string
 
 isot_valimerkit = "?!"
-valimerkit = string.punctuation
+valimerkit = string.punctuation + "–"
 valimerkit = valimerkit.replace("$", "")
 
 def tekstin_siivous(teksti: str, kaikki_lauseet_virkkeiksi: bool=False):
