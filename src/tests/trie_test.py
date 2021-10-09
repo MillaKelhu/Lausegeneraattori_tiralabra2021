@@ -5,8 +5,8 @@ from src.trie import Trie
 class TestTrie(unittest.TestCase):
     def setUp(self):
         self.puu = Trie()
-        self.teksti1 = "Hei! Miten menee?! Kuka sinä olet?\nOlen pieni, punainen kissa, joka kiipesi puuhun."
-        self.teksti2 = "Hei siellä! Miten on mennyt??\n Kuka muu siellä olisi?! Olen iso, musta kissa, joka lähti retkeilemään."
+        self.teksti1 = "Hei! Miten menee?! Kuka sinä olet?\r\nOlen pieni, punainen kissa, joka kiipesi puuhun."
+        self.teksti2 = "Hei siellä! Miten on mennyt??\r\n Kuka muu siellä olisi?! Olen iso, musta kissa, joka lähti retkeilemään."
 
     def test_hae_puu_toimii_oikein(self):
         vastaus = self.puu.hae_puu()

@@ -2,16 +2,17 @@ from src.trie import Trie, default_trie
 import random
 
 
-class Markov:
+class Lauseenmuodostus:
     """Luokka, jolla toteutetaan lauseet triestä muodostava funktio
     """
 
-    def __init__(self, trie=default_trie):
+    def __init__(self, trie):
         """Luokan konstruktori, jolle annetaan parametriksi trie, josta lauseita lähdetään muodostamaan.
 
         Args:
             trie (Trie, vapaaehtoinen): Trie-puu, josta lause muodostetaan. Oletusarvona on default_trie.
         """
+
         self.__trie = trie
 
     def muodosta_lause(self, pituus: int = 6):

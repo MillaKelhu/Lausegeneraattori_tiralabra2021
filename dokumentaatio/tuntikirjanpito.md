@@ -14,10 +14,11 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 24.9. | 3 | Kirjoitetaan ja pohditaan algoritmia, joka osaisi etsiä lauseita triestä.
 25.9. | 2 | Kirjoitettiin algoritmi, joka etsii lauseita triestä.
 30.9. | 4 | Kirjoitetaan funktioita, joita tullaan käyttämään syötetyn tekstimassan siistimiseen ja paloitteluun.
-2.9. | 3 | Korjataan e.m. funktioita, tehdään testejä.
-2.9. | 2 | Tehdään käyttöliittymä, jotta ohjelmaa pystyy paremmin tarkastelemaan.
-2.9. | 4 | Korjaillaan virheitä, joita on rutkasti, kirjoitellaan joitakin asioita uusiksi, jne.
-7.9. | 1 | Korjataan funktio, joka paloittelee tekstin lauseiksi ja lauseet sanoiksi - siirrettiin tämä trie-luokkaan.
-7.9. | 3 | Korjattiin virheitä.
-8.9. | 1 | Korjattiin virheitä.
-Yht: | 52 |
+2.10. | 3 | Korjataan e.m. funktioita, tehdään testejä.
+2.10. | 2 | Tehdään käyttöliittymä, jotta ohjelmaa pystyy paremmin tarkastelemaan.
+2.10. | 4 | Korjaillaan virheitä, joita on rutkasti, kirjoitellaan joitakin asioita uusiksi, jne.
+7.10. | 1 | Korjataan funktio, joka paloittelee tekstin lauseiksi ja lauseet sanoiksi - siirrettiin tämä trie-luokkaan.
+7.10. | 3 | Korjattiin virheitä.
+8.10. | 1 | Korjattiin virheitä.
+9.10. | 1 | Korjattiin virheitä testauksessa.
+Yht: | 53 |

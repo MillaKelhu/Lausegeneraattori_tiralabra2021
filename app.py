@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from src.trie import Trie
-from src.markov import Markov
+from src.lauseenmuodostus import *
 
 app = Flask(__name__)
 
@@ -24,7 +24,6 @@ def index():
         trie = Trie()
         trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
         
-        markov = Markov(trie)
-        lause = markov.muodosta_lause(maksimi_pituus)
+        lause = muodosta_lause(maksimi_pituus)
 
     return render_template("index.html", teksti=teksti, lause=lause)
