@@ -1,7 +1,7 @@
 # Testausdokumentti
 
 ### Yksikkötestaus
-![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/testikattavuus_vko4.png)
+![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/Screenshot%20from%202021-10-09%2015-16-42.png)
 
 Luokkia Trie ja TrieSolmu sekä tekstinkäsittelyfunktioita on testattu unittestillä. Testauksen saa aikaiseksi syöttämällä komentoriville `poetry run invoke test`.
 
