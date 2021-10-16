@@ -21,4 +21,5 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 7.10. | 3 | Korjattiin virheitä.
 8.10. | 1 | Korjattiin virheitä.
 9.10. | 1 | Korjattiin virheitä testauksessa.
-Yht: | 53 |
+16.10. | 2 | Korjattiin tyhjän syötteen aiheuttama kaatuminen
+Yht: | 55 |
