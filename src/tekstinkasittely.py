@@ -4,7 +4,8 @@ isot_valimerkit = "?!"
 valimerkit = string.punctuation + "–"
 valimerkit = valimerkit.replace("$", "")
 
-def tekstin_siivous(teksti: str, kaikki_lauseet_virkkeiksi: bool=False):
+
+def tekstin_siivous(teksti: str, kaikki_lauseet_virkkeiksi: bool = False):
     """Funktio, joka siivoaa annetun tekstin erikoismerkeistä, erottelee virkkeet toisistaan merkillä '$' ja muuttaa samalla kaikki isot kirjaimet pieniksi. Tämä on tekstin trieen tallentamista varten.
 
     Args:
@@ -14,7 +15,6 @@ def tekstin_siivous(teksti: str, kaikki_lauseet_virkkeiksi: bool=False):
     Returns:
         str: Siivottu teksti merkkijonona.
     """
-
 
     siivottu_teksti = teksti.replace("\r\n", " ")
     if kaikki_lauseet_virkkeiksi:

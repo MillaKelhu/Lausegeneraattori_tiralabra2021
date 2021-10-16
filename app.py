@@ -20,11 +20,14 @@ def index():
             lauseet_virkkeiksi = True
         else:
             lauseet_virkkeiksi = False
-
+        
         trie = Trie()
         trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
         
         lauseenmuodostus = Lauseenmuodostus(trie)
         lause = lauseenmuodostus.muodosta_lause(maksimi_pituus)
+
+        if lause == "":
+            lause = "Anna tekstiä, jotta lauseita voidaan muodostaa."
 
     return render_template("index.html", teksti=teksti, lause=lause)

@@ -20,6 +20,27 @@ class TrieSolmu:
         self.__paivita_laskuri()
         return self.__laskuri, self.__lapset
 
+    def tyhjenna(self):
+        """Tyhjentää solmun kaikista lapsista ja palauttaa sen siihen tilaan, millainen se oli heti luotaessa.
+
+        Returns:
+            bool: Palauttaa arvon True.
+        """
+
+        self.__lapset = {}
+        self.__laskuri = 1
+
+    def on_tyhja(self):
+        """Palauttaa tiedon siitä, onko solmulla lapsia.
+
+        Returns:
+            bool: Palauttaa arvon True jos solmulla ei ole lapsia, ja False, jos niitä on.
+        """
+
+        if self.__lapset == {}:
+            return True
+        return False
+
     def hae_lapsi(self, sana: str):
         """Palauttaa solmun yhden tietyn lapsen.
 

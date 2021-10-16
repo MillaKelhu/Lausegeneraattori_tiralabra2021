@@ -1,4 +1,4 @@
-from src.trie import Trie, default_trie
+from src.trie import Trie
 import random
 
 
@@ -6,7 +6,7 @@ class Lauseenmuodostus:
     """Luokka, jolla toteutetaan lauseet triestä muodostava funktio
     """
 
-    def __init__(self, trie):
+    def __init__(self, trie: Trie):
         """Luokan konstruktori, jolle annetaan parametriksi trie, josta lauseita lähdetään muodostamaan.
 
         Args:
@@ -27,20 +27,22 @@ class Lauseenmuodostus:
         lause = ""
         solmu = self.__trie
 
-        for i in range(pituus):
-            sana, uusi_solmu = self.__valitse_sana(solmu)
-            solmu = uusi_solmu
-            if sana:
-                lause += sana
-                lause += " "
-            if solmu:
-                continue
-            break
-        
-        if lause[-1] == " ":
-            lause = lause[:-1]
+        if solmu.on_tyhja() is False:
 
-        lause = lause[0].upper() + lause[1:] + "."
+            for i in range(pituus):
+                sana, uusi_solmu = self.__valitse_sana(solmu)
+                solmu = uusi_solmu
+                if sana:
+                    lause += sana
+                    lause += " "
+                if solmu:
+                    continue
+                break
+
+            if lause[-1] == " ":
+                lause = lause[:-1]
+
+            lause = lause[0].upper() + lause[1:] + "."
 
         return lause
 

@@ -41,3 +41,21 @@ class TestTrieSolmu(unittest.TestCase):
         vastaus = self.solmu.lasten_todennakoisyydet()
 
         self.assertEqual(vastaus, [1, 1, 1])
+
+    def test_on_tyhja_toimii_oikein_kun_lapsia_ei_ole(self):
+        vastaus = self.solmu.on_tyhja()
+
+        self.assertEqual(vastaus, True)
+
+    def test_on_tyhja_toimii_oikein_kun_lapsia_on(self):
+        self.solmu.lisaa_lapsi("punainen")
+        vastaus = self.solmu.on_tyhja()
+
+        self.assertEqual(vastaus, False)
+
+    def test_tyhjenna_toimii_oikein(self):
+        self.solmu.lisaa_lapsi("punainen")
+        self.solmu.tyhjenna()
+        vastaus = self.solmu.hae_solmu()
+
+        self.assertEqual(vastaus, (1, {}))

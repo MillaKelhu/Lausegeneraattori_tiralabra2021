@@ -1,6 +1,7 @@
 from src.triesolmu import TrieSolmu
 from src.tekstinkasittely import tekstin_siivous
 
+
 class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
     """
@@ -35,18 +36,7 @@ class Trie(TrieSolmu):
 
         return palautus
 
-    def tyhjenna_puu(self):
-        """Tyhjentää trie-puun kaikista solmuista.
-
-        Returns:
-            bool: Palauttaa arvon True.
-        """
-
-        self.__lapset = {}
-        self.__laskuri = 1
-        return True
-
-    def lisaa_tekstia(self, teksti: str, tallennuspituus: int=3, kaikki_lauseet_virkkeiksi: bool=False):
+    def lisaa_tekstia(self, teksti: str, tallennuspituus: int = 3, kaikki_lauseet_virkkeiksi: bool = False):
         """Näkyvä metodi, jolla tekstiä lisätään puuhun. Metodi ensin siivoaa ja paloittelee tekstin virkkeiksi annettujen parametrien mukaan. Sen jälkeen jokainen lause paloitellaan listaksi sanoja, jotka tallennetaan halutun pituisina pätkinä trie-puuhun.
 
         Args:
@@ -92,7 +82,7 @@ class Trie(TrieSolmu):
             juuri = self
 
         sana = sanat[0]
-        
+
         lapsi_lisatty = juuri.lisaa_lapsi(sana)
 
         if lapsi_lisatty and len(sanat) == 1:

@@ -22,24 +22,33 @@ class TestTrie(unittest.TestCase):
         self.puu.lisaa_tekstia(self.teksti1)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
+        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {
+                         'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
 
     def test_lisaa_tekstia_ei_lisaa_kaksoiskappaleita(self):
         self.puu.lisaa_tekstia(self.teksti1)
         self.puu.lisaa_tekstia(self.teksti1)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
+        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {
+                         'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
 
     def test_lisaa_tekstia_toimii_oikein_kun_teksteja_on_useampi(self):
         self.puu.lisaa_tekstia(self.teksti1)
         self.puu.lisaa_tekstia(self.teksti2)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'menee': {}, 'on': {'mennyt': {}}}, 'kuka': {'sinä': {'olet': {}}, 'muu': {'siellä': {}}}, 'olen': {'pieni': {'punainen': {}}, 'iso': {'musta': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}, 'lähti': {}}}, 'joka': {'kiipesi': {'puuhun': {}}, 'lähti': {'retkeilemään': {}}}, 'muu': {'siellä': {'olisi': {}}}, 'iso': {'musta': {'kissa': {}}}, 'musta': {'kissa': {'joka': {}}}})
+        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'menee': {}, 'on': {'mennyt': {}}}, 'kuka': {'sinä': {'olet': {}}, 'muu': {'siellä': {}}}, 'olen': {'pieni': {'punainen': {}}, 'iso': {'musta': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {
+                         'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}, 'lähti': {}}}, 'joka': {'kiipesi': {'puuhun': {}}, 'lähti': {'retkeilemään': {}}}, 'muu': {'siellä': {'olisi': {}}}, 'iso': {'musta': {'kissa': {}}}, 'musta': {'kissa': {'joka': {}}}})
 
-    def test_tyhjenna_puu_toimii_oikein(self):
-        self.puu.tyhjenna_puu()
+    def test_lisaa_tekstia_ei_lisaa_tyhjia_merkkijonoja(self):
+        self.puu.lisaa_tekstia("")
+        vastaus = self.puu.hae_puu()
+
+        self.assertEqual(vastaus, {})
+
+    def test_lisaa_tekstia_ei_lisaa_pelkkia_valilyonteja(self):
+        self.puu.lisaa_tekstia("        ")
         vastaus = self.puu.hae_puu()
 
         self.assertEqual(vastaus, {})
