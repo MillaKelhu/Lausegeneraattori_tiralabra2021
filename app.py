@@ -21,8 +21,8 @@ def index():
         else:
             lauseet_virkkeiksi = False
         
-        trie = Trie()
-        trie.lisaa_tekstia(teksti, tallennuspituus, lauseet_virkkeiksi)
+        trie = Trie(tallennuspituus)
+        trie.lisaa_tekstia(teksti, lauseet_virkkeiksi)
         
         lauseenmuodostus = Lauseenmuodostus(trie)
         lause = lauseenmuodostus.muodosta_lause(maksimi_pituus)

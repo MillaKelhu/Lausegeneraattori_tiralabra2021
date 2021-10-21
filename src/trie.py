@@ -6,11 +6,12 @@ class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
     """
 
-    def __init__(self):
+    def __init__(self, tallennuspituus: int=3):
         """Luokan konstruktori, joka luo juuren trie-puulle TrieSolmuna.
         """
 
         super().__init__()
+        self.__tallennuspituus = tallennuspituus
 
     def hae_puu(self, juuri=None):
         """Palauttaa puun sisäkkäisenä sanakirjana.
@@ -36,7 +37,7 @@ class Trie(TrieSolmu):
 
         return palautus
 
-    def lisaa_tekstia(self, teksti: str, tallennuspituus: int = 3, kaikki_lauseet_virkkeiksi: bool = False):
+    def lisaa_tekstia(self, teksti: str, kaikki_lauseet_virkkeiksi: bool = False):
         """Näkyvä metodi, jolla tekstiä lisätään puuhun. Metodi ensin siivoaa ja paloittelee tekstin virkkeiksi annettujen parametrien mukaan. Sen jälkeen jokainen lause paloitellaan listaksi sanoja, jotka tallennetaan halutun pituisina pätkinä trie-puuhun.
 
         Args:
@@ -55,12 +56,12 @@ class Trie(TrieSolmu):
             sanat = virke.split()
             if sanat != []:
                 n = len(sanat)
-                if n <= tallennuspituus:
+                if n <= self.__tallennuspituus:
                     self.__lisaa_sanoja(sanat)
 
                 else:
-                    for i in range(n-tallennuspituus+1):
-                        self.__lisaa_sanoja(sanat[i:i+tallennuspituus])
+                    for i in range(n-self.__tallennuspituus+1):
+                        self.__lisaa_sanoja(sanat[i:i+self.__tallennuspituus])
 
         return True
 
