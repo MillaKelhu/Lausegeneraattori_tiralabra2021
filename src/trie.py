@@ -42,7 +42,6 @@ class Trie(TrieSolmu):
 
         Args:
             teksti (str): Teksti merkkijonomuodossa.
-            tallennuspituus (int, vapaaehtoinen): Tallennettavien tekstipätkien pituus sanoina. Oletusarvona on 3.
             kaikki_lauseet_virkkeiksi (bool, vapaaehtoinen): Jos True, pilkkuja kohdellaan kuten pisteitä, ja kaikki sivu- ja päälauseet (mutta myös luettelot) muutetaan omiksi virkkeikseen. Oletusarvona on False, eli pilkut vain poistetaan eikä uusia virkkeitä synny.
 
         Returns:
