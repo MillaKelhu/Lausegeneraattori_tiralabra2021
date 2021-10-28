@@ -13,8 +13,7 @@ Syötteenä käytetty 'Adalmiinan helmi' on satu, joka löytyy alun perin [tää
 Syötteenä on myös käytetty kokonaisuudessaan kirjaa 'Annan nuoruusvuodet', joka löytyy alun perin [täältä](https://www.gutenberg.org/cache/epub/49717/pg49717-images.html). Tekstiä ollaan muokattu itse pelkästään niin, että muutamat sisennykset ja lukujen numeroinnit ollaan poistettu. Tekstissä ilmeneviä satunnaisia erikoismerkkejä (esim. '@@') ei olla poistettu, sillä tekstinkäsittelyn pitää pystyä poistamaan ne. Syöte on myös sen verran valtava, että yksittäisten kirjoitusvirheiden korjaaminen vaikutti liian aikaavievältä, minkä takia niitä on saattanut jäädä mukaan. Muokattu ja syötteenä käytetty teksti löytyy [täältä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/annan_nuoruusvuodet.md)
 
 Testaus ollaan siis tässä tapauksessa suoritettu pelkästään niin, että ollaan annettu eri tekstejä ja asetuksia ohjelmalle, esim. [herokussa](https://lausegeneraattori.herokuapp.com/) ja sitten katsottu, millaisia lauseita tuloksena syntyy.
-Esimerkiksi syöte 'Adalmiinan helmi' on tuottanut seuraavia tekstipätkiä, joita ei löydy alkuperäisestä tekstistä:
-* Mummosta se oli täysin erilainen.
-* Nousi kova meteli kun huomattiin että adalmina ei osannut.
-* Kuljettuaan hän istahti erään metsälammen rannalle ja hänestä kasvoi kultatukkainen kaunotar. 
-* Lahjan hyvän ja koska kyseessä oli kuninkaallinen lapsi kummeiksi saatiin kaksi höyhenenkevyttä poutapilveä. 
+
+Esimerkiksi syötteet 'Adalminan helmi' ja 'Annan nuoruusvuodet' ovat tuottaneet [täällä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/lauseenmuodostuksen_tuloksia.md) olevat lauseet. 
+Kyseisten lauseiden perusteella huomataan, että mitä pienempi Markovin ketjun aste on, mitä suurempi syöte on, tai jos kaikkia lauseita ei muuteta omiksi virkkeikseen, sitä enemmän ohjelma tuottaa uusia lauseita. 
+Mitä suurempi ketjun aste on, mitä suurempi syöte on, tai jos kaikkia lauseita ei muuteta omiksi virkkeikseen, sitä enemmän ohjelma tuottaa järkeviä lauseita.
