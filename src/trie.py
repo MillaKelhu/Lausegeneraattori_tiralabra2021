@@ -1,6 +1,5 @@
 from src.triesolmu import TrieSolmu
 from src.tekstinkasittely import tekstin_siivous
-import random
 
 
 class Trie(TrieSolmu):
@@ -39,11 +38,17 @@ class Trie(TrieSolmu):
         return palautus
 
     def lisaa_tekstia(self, teksti: str, kaikki_lauseet_virkkeiksi: bool = False):
-        """Näkyvä metodi, jolla tekstiä lisätään puuhun. Metodi ensin siivoaa ja paloittelee tekstin virkkeiksi annettujen parametrien mukaan. Sen jälkeen jokainen lause paloitellaan listaksi sanoja, jotka tallennetaan halutun pituisina pätkinä trie-puuhun.
+        """Näkyvä metodi, jolla tekstiä lisätään puuhun.
+        Metodi ensin siivoaa ja paloittelee tekstin virkkeiksi annettujen parametrien mukaan.
+        Sen jälkeen jokainen lause paloitellaan listaksi sanoja,
+        jotka tallennetaan halutun pituisina pätkinä trie-puuhun.
 
         Args:
             teksti (str): Teksti merkkijonomuodossa.
-            kaikki_lauseet_virkkeiksi (bool, vapaaehtoinen): Jos True, pilkkuja kohdellaan kuten pisteitä, ja kaikki sivu- ja päälauseet (mutta myös luettelot) muutetaan omiksi virkkeikseen. Oletusarvona on False, eli pilkut vain poistetaan eikä uusia virkkeitä synny.
+            kaikki_lauseet_virkkeiksi (bool, vapaaehtoinen): Jos True,
+            pilkkuja kohdellaan kuten pisteitä, ja kaikki sivu- ja päälauseet
+            (mutta myös luettelot) muutetaan omiksi virkkeikseen. Oletusarvona on False,
+            eli pilkut vain poistetaan eikä uusia virkkeitä synny.
 
         Returns:
             bool: Palauttaa arvon True kun teksti on käyty läpi ja lisätty trieen.

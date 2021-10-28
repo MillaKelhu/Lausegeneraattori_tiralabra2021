@@ -21,7 +21,8 @@ class TrieSolmu:
         return self.__laskuri, self.__lapset
 
     def tyhjenna(self):
-        """Tyhjentää solmun kaikista lapsista ja palauttaa sen siihen tilaan, millainen se oli heti luotaessa.
+        """Tyhjentää solmun kaikista lapsista ja palauttaa sen siihen tilaan,
+        millainen se oli heti luotaessa.
 
         Returns:
             bool: Palauttaa arvon True.
@@ -81,7 +82,8 @@ class TrieSolmu:
         return False
 
     def lasten_todennakoisyydet(self):
-        """Palauttaa solmun lasten laskurit, joita käytetään sitten painoina todennäköisyyksiä laskiessa.
+        """Palauttaa solmun lasten laskurit,
+        joita käytetään sitten painoina todennäköisyyksiä laskiessa.
 
         Returns:
             lista: Lista, jossa on solmun lasten laskurit.

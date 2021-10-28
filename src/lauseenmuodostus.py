@@ -1,5 +1,5 @@
-from src.trie import Trie
 import random
+from src.trie import Trie
 
 
 class Lauseenmuodostus:
@@ -7,10 +7,12 @@ class Lauseenmuodostus:
     """
 
     def __init__(self, trie: Trie):
-        """Luokan konstruktori, jolle annetaan parametriksi trie, josta lauseita lähdetään muodostamaan.
+        """Luokan konstruktori, jolle annetaan parametriksi trie,
+        josta lauseita lähdetään muodostamaan.
 
         Args:
-            trie (Trie, vapaaehtoinen): Trie-puu, josta lause muodostetaan. Oletusarvona on default_trie.
+            trie (Trie, vapaaehtoinen): Trie-puu, josta lause muodostetaan.
+            Oletusarvona on default_trie.
         """
 
         self.__trie = trie
@@ -45,7 +47,8 @@ class Lauseenmuodostus:
         return lause_merkkijonona
 
     def __valitse_sana(self, lause):
-        """Valitsee annetun solmun lapsista uuden sanan sekä mahdollisesti solmun, johon seuraavaksi siirrytään.
+        """Valitsee annetun solmun lapsista uuden sanan sekä mahdollisesti solmun,
+        johon seuraavaksi siirrytään.
 
         Args:
             solmu (TrieSolmu): Triesolmu

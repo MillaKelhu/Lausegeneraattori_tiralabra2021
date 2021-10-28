@@ -23,31 +23,49 @@ class TestTrie(unittest.TestCase):
         self.puu.lisaa_tekstia(self.teksti1)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {
-                         'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
+        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {
+                         'sinä': {'olet': {}}}, 'olen': {'pieni': {
+                         'punainen': {}}}, 'pieni': {'punainen': {
+                         'kissa': {}}}, 'punainen': {'kissa': {
+                         'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {
+                         'kiipesi': {'puuhun': {}}}})
 
     def test_lisaa_tekstia_lisaa_tekstin_oikein_korkeammalla_tallennuspituudella(self):
         self.puu_korkeampi_aste.lisaa_tekstia(self.teksti2)
         vastaus = self.puu_korkeampi_aste.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'on': {'mennyt': {}}}, 'kuka': {'muu': {'siellä': {'olisi': {}}}}, 'olen': {'iso': {
-                         'musta': {'kissa': {'joka': {}}}}}, 'iso': {'musta': {'kissa': {'joka': {'lähti': {}}}}}, 'musta': {'kissa': {'joka': {'lähti': {'retkeilemään': {}}}}}})
+        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'on': {
+                         'mennyt': {}}}, 'kuka': {'muu': {'siellä': {
+                         'olisi': {}}}}, 'olen': {'iso': {'musta': {'kissa': {
+                         'joka': {}}}}}, 'iso': {'musta': {'kissa': {'joka': {
+                         'lähti': {}}}}}, 'musta': {'kissa': {'joka': {'lähti': {
+                         'retkeilemään': {}}}}}})
 
     def test_lisaa_tekstia_ei_lisaa_kaksoiskappaleita(self):
         self.puu.lisaa_tekstia(self.teksti1)
         self.puu.lisaa_tekstia(self.teksti1)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {'sinä': {'olet': {}}}, 'olen': {'pieni': {'punainen': {}}}, 'pieni': {
-                         'punainen': {'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
+        self.assertEqual(vastaus, {'hei': {}, 'miten': {'menee': {}}, 'kuka': {
+                         'sinä': {'olet': {}}}, 'olen': {'pieni': {
+                         'punainen': {}}}, 'pieni': {'punainen': {
+                         'kissa': {}}}, 'punainen': {'kissa': {'joka': {}}}, 'kissa': {
+                         'joka': {'kiipesi': {}}}, 'joka': {'kiipesi': {'puuhun': {}}}})
 
     def test_lisaa_tekstia_toimii_oikein_kun_teksteja_on_useampi(self):
         self.puu.lisaa_tekstia(self.teksti1)
         self.puu.lisaa_tekstia(self.teksti2)
         vastaus = self.puu.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'menee': {}, 'on': {'mennyt': {}}}, 'kuka': {'sinä': {'olet': {}}, 'muu': {'siellä': {}}}, 'olen': {'pieni': {'punainen': {}}, 'iso': {'musta': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {
-                         'kissa': {'joka': {}}}, 'kissa': {'joka': {'kiipesi': {}, 'lähti': {}}}, 'joka': {'kiipesi': {'puuhun': {}}, 'lähti': {'retkeilemään': {}}}, 'muu': {'siellä': {'olisi': {}}}, 'iso': {'musta': {'kissa': {}}}, 'musta': {'kissa': {'joka': {}}}})
+        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'menee': {}, 'on': {
+                         'mennyt': {}}}, 'kuka': {'sinä': {'olet': {}}, 'muu': {
+                         'siellä': {}}}, 'olen': {'pieni': {'punainen': {}}, 'iso': {
+                         'musta': {}}}, 'pieni': {'punainen': {'kissa': {}}}, 'punainen': {
+                         'kissa': {'joka': {}}}, 'kissa': {'joka': {
+                         'kiipesi': {}, 'lähti': {}}}, 'joka': {'kiipesi': {
+                         'puuhun': {}}, 'lähti': {'retkeilemään': {}}}, 'muu': {'siellä': {
+                         'olisi': {}}}, 'iso': {'musta': {'kissa': {}}}, 'musta': {
+                         'kissa': {'joka': {}}}})
 
     def test_lisaa_tekstia_ei_lisaa_tyhjia_merkkijonoja(self):
         self.puu.lisaa_tekstia("")
