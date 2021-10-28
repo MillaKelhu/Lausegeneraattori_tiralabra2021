@@ -22,4 +22,7 @@ Päivämäärä | Aika (tunneissa) | Mitä tehty
 8.10. | 1 | Korjattiin virheitä.
 9.10. | 1 | Korjattiin virheitä testauksessa.
 16.10. | 2 | Korjattiin tyhjän syötteen aiheuttama kaatuminen
-Yht: | 55 |
+21.10. | 2 | Korjattiin lauseenmuodostus
+27.10. | 3 | Tehtiin lauseenmuodostuksen manuaalista testausta
+28.10. | 10 | Tehtiin lisää lauseenmuodostuksen manuaalista testausta, hoidettiin dokumentointi kuntoon
+Yht: | 70 |
