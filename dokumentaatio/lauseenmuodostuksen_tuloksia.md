@@ -22,14 +22,14 @@ __Näin__ merkityt lauseet taas ovat sellaisia, jotka allekirjoittaneen mielest�
 14. Tänne saarelle eräs kuuluisa silmälääkäri ja tohtori sanoo että professori tremaine on sanonut minulle totuuden ei koko juttu velvollisuuden kannalta. 
 15. Sallimus että te olisitte täällä häntä vastassa ja he sulloutuivat kaikki yhdessä suureen häkkiin joka kulki ohi pihalla hämmästyneenä pysähtyi. 
 16. Oli ollut tuloksena hänen käynnistään rouva spencerin piti tuoda hänet minulle nova scotiasta. 
-17. __Ja sitten katsoisin ylös taivaaseen ylös tuohon kauniiseen siniseen taivaaseen joka ei koskaan ennen ole juonut teetä missään pappilassa enkä.__ 
+17. Ja sitten katsoisin ylös taivaaseen ylös tuohon kauniiseen siniseen taivaaseen joka ei koskaan ennen ole juonut teetä missään pappilassa enkä.
 18. __Rouva ovat menneet mutta en silti koskaan unohda kuinka muhkeilta sähkövalo ja kukat ja naiset hienoissa puvuissaan näyttivät.__
 19. **_Otin neulan rinnastani vilkaistakseni taas siihen hieman._**
 20. Mahdoinko olla sen näköinen hän oli suorittanut asiansa liiankin hyvin mutta sehän olisi sangen hauskaa ajomatkalla. 
 
-##### Uusia lauseita on 16/20
+##### Uusia lauseita on 15/20
 ##### Järkeviä lauseita on 8/20
-##### Uusia ja järkeviä lauseita on 6/20
+##### Uusia ja järkeviä lauseita on 5/20
 
 #### Lauseet virkkeiksi
 1. _Kysyi marilla ihmettelen ja pahoilla mielin._
