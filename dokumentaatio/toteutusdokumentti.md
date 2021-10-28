@@ -115,3 +115,8 @@ function paivita_laskuri()
   laskuri = maximum(summa, laskuri)
 ```
 Ohjelmaa suoritettaessa tehdään uusi triepuu, johon lisätään tekstiä, ja josta sitten etsitään lause. Aikavaativuus ohjelman suoritukselle on siis maksimissaan O(_vnk_) + O(2_t_), jossa _v_ = virkkeiden lukumäärä, _n_ = virkkeessä olevien sanojen lukumäärä ja _k_ = n-tallennuspituus ja _t_ on trien kaikkien solmujen lukumäärä.
+
+## Puutteet ja parannusehdotukset
+* Aikavaatimusta tekstiä lisätessä voisi varmasti saada pienemmäksikin, mutta allekirjoittanut ei saanut tätä tehtyä ongelmitta.
+* Käyttöliittymän saisi varmasti miellyttävämmäksikin.
+* Suunnitelmista huolimatta ohjelmaan ei lisätty mahdollisuutta opettaa, millä sanoilla lauseet alkavat ja mihin ne päättyvät.
