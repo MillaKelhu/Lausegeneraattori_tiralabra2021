@@ -7,7 +7,7 @@ class Trie(TrieSolmu):
     """Luokka jolla toteutetaan trie-tietorakenne.
     """
 
-    def __init__(self, tallennuspituus: int=3):
+    def __init__(self, tallennuspituus: int = 3):
         """Luokan konstruktori, joka luo juuren trie-puulle TrieSolmuna.
         """
 

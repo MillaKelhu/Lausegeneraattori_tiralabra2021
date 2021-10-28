@@ -27,6 +27,7 @@ class Lauseenmuodostus:
         """
         lause = []
         solmu = self.__trie
+        lause_merkkijonona = ''
 
         if solmu.on_tyhja() is False:
 
@@ -38,7 +39,8 @@ class Lauseenmuodostus:
                     break
 
             lause_merkkijonona = ' '.join(lause)
-            lause_merkkijonona = lause_merkkijonona[0].upper() + lause_merkkijonona[1:] + "."
+            lause_merkkijonona = lause_merkkijonona[0].upper(
+            ) + lause_merkkijonona[1:] + "."
 
         return lause_merkkijonona
 
@@ -52,8 +54,8 @@ class Lauseenmuodostus:
             str, TrieSolmu: Valittu sana sekä solmu, johon voidaan siirtyä seuraavaksi.
         """
 
-        solmu = self.__trie    
-        
+        solmu = self.__trie
+
         n = min(self.__markov_aste, len(lause))
 
         for i in range(n, 0, -1):
@@ -69,8 +71,9 @@ class Lauseenmuodostus:
             if lapset != {}:
                 lapset = solmu.hae_solmu()[1]
                 painot = solmu.lasten_todennakoisyydet()
-                sana = random.choices(list(lapset.keys()), weights=painot, k=1)[0]
+                sana = random.choices(
+                    list(lapset.keys()), weights=painot, k=1)[0]
 
                 return sana
-        
+
         return None
