@@ -3,8 +3,10 @@
 Sovellus on kokeiltavissa [herokussa](https://lausegeneraattori.herokuapp.com/).
 
 ## Dokumentaatio
+* [Käyttöohje](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
 * [Määrittelydokumentti](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/maarittelydokumentti.md)
 * [Testausdokumentti](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/testausdokumentti.md)
+* [Toteutusdokumentti](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/toteutusdokumentti.md)
 
 ### Viikkoraportit
 * [Viikkoraportti 1](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/viikkoraportti_1.md)
