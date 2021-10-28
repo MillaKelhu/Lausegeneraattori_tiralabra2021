@@ -15,28 +15,51 @@
         <textarea name="teksti" id="comment" rows="30" cols="100">{{ teksti }}</textarea>
     </p>
     Muuta kaikki lauseet virkkeiksi?
-    <p>
-        <input type="radio" name="lauseet_virkkeiksi" value="False" checked="checked"> Ei
-        <input type="radio" name="lauseet_virkkeiksi" value="True"> Kyllä
-    </p>
+    {% if lauseet_virkkeiksi: %}
+        <p>
+            <input type="radio" name="lauseet_virkkeiksi" value="False"> Ei
+            <input type="radio" name="lauseet_virkkeiksi" value="True" checked="checked"> Kyllä
+        </p>
+    {% else: %}
+        <p>
+            <input type="radio" name="lauseet_virkkeiksi" value="False" checked="checked"> Ei
+            <input type="radio" name="lauseet_virkkeiksi" value="True"> Kyllä
+        </p>
+    {% endif %}
     Markovin ketjun aste:
-    <p>
-        <input type="radio" name="markov_aste" value="2" checked="checked"> 2
-        <input type="radio" name="markov_aste" value="3"> 3
-        <input type="radio" name="markov_aste" value="4"> 4
-    </p>
+    {% if markov==2: %}
+        <p>
+            <input type="radio" name="markov_aste" value="2" checked="checked"> 2
+            <input type="radio" name="markov_aste" value="3"> 3
+            <input type="radio" name="markov_aste" value="4"> 4
+        </p>
+    {% elif markov==3: %}
+        <p>
+            <input type="radio" name="markov_aste" value="2"> 2
+            <input type="radio" name="markov_aste" value="3" checked="checked"> 3
+            <input type="radio" name="markov_aste" value="4"> 4
+        </p>
+    {% elif markov==4: %}
+        <p>
+            <input type="radio" name="markov_aste" value="2"> 2
+            <input type="radio" name="markov_aste" value="3"> 3
+            <input type="radio" name="markov_aste" value="4" checked="checked"> 4
+        </p>
+    {% endif %}
     Lauseen maksimipituus:
+    <select name="pituus">
+        {% for i in range(6, 21) %}
+            {% if i == maksimipituus: %}
+                <option value="{{ i }}" selected>{{ i }}</option>
+            {% else: %}
+                <option value="{{ i }}" >{{ i }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
     <p>
-        <input type="radio" name="pituus" value="6" checked="checked"> 6
-        <input type="radio" name="pituus" value="7"> 7
-        <input type="radio" name="pituus" value="8"> 8
-        <input type="radio" name="pituus" value="9"> 9
-        <input type="radio" name="pituus" value="10"> 10
-        <input type="radio" name="pituus" value="12"> 12
-        <input type="radio" name="pituus" value="13"> 13
-        <input type="radio" name="pituus" value="14"> 14
+        <input type="submit" value="Generoi lause">
     </p>
-    <input type="submit" value="Generoi lause">
+    
     </form>
 
     {{ lause }}

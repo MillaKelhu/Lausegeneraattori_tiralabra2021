@@ -1,5 +1,6 @@
 from src.triesolmu import TrieSolmu
 from src.tekstinkasittely import tekstin_siivous
+import random
 
 
 class Trie(TrieSolmu):
@@ -11,7 +12,7 @@ class Trie(TrieSolmu):
         """
 
         super().__init__()
-        self.__tallennuspituus = tallennuspituus
+        self.tallennuspituus = tallennuspituus
 
     def hae_puu(self, juuri=None):
         """Palauttaa puun sisäkkäisenä sanakirjana.
@@ -55,12 +56,12 @@ class Trie(TrieSolmu):
             sanat = virke.split()
             if sanat != []:
                 n = len(sanat)
-                if n <= self.__tallennuspituus:
+                if n <= self.tallennuspituus:
                     self.__lisaa_sanoja(sanat)
 
                 else:
-                    for i in range(n-self.__tallennuspituus+1):
-                        self.__lisaa_sanoja(sanat[i:i+self.__tallennuspituus])
+                    for i in range(n-self.tallennuspituus+1):
+                        self.__lisaa_sanoja(sanat[i:i+self.tallennuspituus])
 
         return True
 

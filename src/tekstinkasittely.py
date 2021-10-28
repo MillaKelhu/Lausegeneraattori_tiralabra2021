@@ -1,7 +1,7 @@
 import string
 
-isot_valimerkit = "?!"
-valimerkit = string.punctuation + "–"
+isot_valimerkit = "?!…"
+valimerkit = string.punctuation + "–" + "—"
 valimerkit = valimerkit.replace("$", "")
 
 

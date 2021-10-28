@@ -14,6 +14,7 @@ class Lauseenmuodostus:
         """
 
         self.__trie = trie
+        self.__markov_aste = trie.tallennuspituus-1
 
     def muodosta_lause(self, pituus: int = 6):
         """Muodostaa lauseen triessä olevista sanoista.
@@ -24,29 +25,24 @@ class Lauseenmuodostus:
         Returns:
             str: Muodostettu lause, jonka alkukirjain on suurennettu ja loppuun on lisätty piste.
         """
-        lause = ""
+        lause = []
         solmu = self.__trie
 
         if solmu.on_tyhja() is False:
 
             for i in range(pituus):
-                sana, uusi_solmu = self.__valitse_sana(solmu)
-                solmu = uusi_solmu
+                sana = self.__valitse_sana(lause)
                 if sana:
-                    lause += sana
-                    lause += " "
-                if solmu:
-                    continue
-                break
+                    lause.append(sana)
+                else:
+                    break
 
-            if lause[-1] == " ":
-                lause = lause[:-1]
+            lause_merkkijonona = ' '.join(lause)
+            lause_merkkijonona = lause_merkkijonona[0].upper() + lause_merkkijonona[1:] + "."
 
-            lause = lause[0].upper() + lause[1:] + "."
+        return lause_merkkijonona
 
-        return lause
-
-    def __valitse_sana(self, solmu):
+    def __valitse_sana(self, lause):
         """Valitsee annetun solmun lapsista uuden sanan sekä mahdollisesti solmun, johon seuraavaksi siirrytään.
 
         Args:
@@ -56,22 +52,25 @@ class Lauseenmuodostus:
             str, TrieSolmu: Valittu sana sekä solmu, johon voidaan siirtyä seuraavaksi.
         """
 
-        lapset = solmu.hae_solmu()[1]
+        solmu = self.__trie    
+        
+        n = min(self.__markov_aste, len(lause))
 
-        if lapset != {}:
-            painot = solmu.lasten_todennakoisyydet()
+        for i in range(n, 0, -1):
+            sana = lause[-i]
+            if solmu:
+                solmu = solmu.hae_lapsi(sana)
+            else:
+                break
 
-            sana = random.choices(list(lapset.keys()), weights=painot, k=1)[0]
-            uusi_solmu = lapset[sana]
-            uusi_solmu_lapset = uusi_solmu.hae_solmu()[1]
+        if solmu:
+            lapset = solmu.hae_solmu()[1]
 
-            if uusi_solmu_lapset == {}:
-                juuri = self.__trie.hae_solmu()[1]
-                if sana in juuri:
-                    uusi_solmu = juuri[sana]
-                else:
-                    uusi_solmu = None
+            if lapset != {}:
+                lapset = solmu.hae_solmu()[1]
+                painot = solmu.lasten_todennakoisyydet()
+                sana = random.choices(list(lapset.keys()), weights=painot, k=1)[0]
 
-            return sana, uusi_solmu
-
-        return None, None
+                return sana
+        
+        return None
