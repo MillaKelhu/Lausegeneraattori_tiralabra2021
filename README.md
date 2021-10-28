@@ -15,3 +15,4 @@ Sovellus on kokeiltavissa [herokussa](https://lausegeneraattori.herokuapp.com/).
 * [Viikkoraportti 4](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/viikkoraportti_4.md)
 * [Viikkoraportti 5](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/viikkoraportti_5.md)
 * [Viikkoraportti 6](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/viikkoraportti_6.md)
+* [Lopullinen viikkoraportti](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/viikkoraportti_lopullinen.md)
