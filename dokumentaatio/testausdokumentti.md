@@ -1,13 +1,17 @@
 # Testausdokumentti
 
 ### Yksikkötestaus
-![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/Screenshot%20from%202021-10-09%2015-16-42.png)
+![](https://raw.githubusercontent.com/MillaKelhu/Lausegeneraattori_tiralabra2021/main/dokumentaatio/kuvat/testikattavuus_vko7.png)
 
-Luokkia Trie ja TrieSolmu sekä tekstinkäsittelyfunktioita on testattu unittestillä. Testauksen saa aikaiseksi syöttämällä komentoriville `poetry run invoke test`.
+Luokkia `Trie`, `TrieSolmu` ja `Lauseenmuodostus` sekä tekstinkäsittelyfunktioita `tekstin_siivous` on testattu unittestillä. Näin toteutetut testit ovat kattavia ja asiansa ajavia kaikkien muiden paitsi lauseenmuodostuksen osalta. Koska lauseenmuodostuksessa syntyvät lauseet ovat hyvin erilaisia, eikä etukäteen voi tietää, mitä tuloksena tulee, yksikkötestauksessa testattiin pelkästään sitä, että luokan funktiot ylipäätään toimivat ja palauttavat jotain oikein. 
+Testauksen saa aikaiseksi syöttämällä komentoriville `poetry run invoke test`.
 
 ## Lauseenpoiminta
-Sen sijaan lauseita poimivaa algoritmia ollaan testattu lähinnä itse kirjoitetulla tekstillä, joka on kokoelma hyvin yksinkertaisia lauseita, ja joiden kanssa on helppoa tarkistaa, onko ohjelma tehnyt itse mitään uusia lauseita. Teksti löytyy [täältä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/yksinkertainen_teksti_1.md).
-Lisäksi syötteenä ollaan käytetty [täältä](https://iltasatu.org/lue-selaimessa/?id=1637) löytyvää tekstiä, jota ollaan muokattu itse pelkästään niin, että kirjoitusvirheet ollaan poistettu. Korjattu ja syötteenä käytetty teksti löytyy [täältä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/adalmiinan_helmi.md).
+Lauseenmuodostuksen varsinainen testaus ollaan hoidettu manuaalisesti erilaisissa syötteillä, jotka löytyvät kansiosta [syotteet](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/tree/main/dokumentaatio/syotteet).
+Syötteenä käytetty [yksinkertainen_teksti_1.md](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/yksinkertainen_teksti_1.md) on itse kirjoitettu, ja sitä ollaan käytetty lähinnä testauksen alkuvaiheissa.
+Syötteenä käytetty 'Adalmiinan helmi' on satu, joka löytyy alun perin [täältä](https://iltasatu.org/lue-selaimessa/?id=1637). Tekstiä ollaan muokattu itse pelkästään niin, että kirjoitusvirheet ollaan poistettu. Korjattu ja syötteenä käytetty teksti löytyy [täältä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/adalmiinan_helmi.md).
+Syötteenä on myös käytetty kokonaisuudessaan kirjaa 'Annan nuoruusvuodet', joka löytyy alun perin [täältä](https://www.gutenberg.org/cache/epub/49717/pg49717-images.html). Tekstiä ollaan muokattu itse pelkästään niin, että muutamat sisennykset ja lukujen numeroinnit ollaan poistettu. Tekstissä ilmeneviä satunnaisia erikoismerkkejä (esim. '@@') ei olla poistettu, sillä tekstinkäsittelyn pitää pystyä poistamaan ne. Syöte on myös sen verran valtava, että yksittäisten kirjoitusvirheiden korjaaminen vaikutti liian aikaavievältä, minkä takia niitä on saattanut jäädä mukaan. Muokattu ja syötteenä käytetty teksti löytyy [täältä](https://github.com/MillaKelhu/Lausegeneraattori_tiralabra2021/blob/main/dokumentaatio/syotteet/annan_nuoruusvuodet.md)
+
 Esimerkiksi jälkimmäinen teksti on tuottanut seuraavia tekstipätkiä, joita ei löydy alkuperäisestä tekstistä:
 * Mummosta se oli täysin erilainen.
 * Nousi kova meteli kun huomattiin että adalmina ei osannut.
