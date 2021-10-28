@@ -69,7 +69,6 @@ class Lauseenmuodostus:
             lapset = solmu.hae_solmu()[1]
 
             if lapset != {}:
-                lapset = solmu.hae_solmu()[1]
                 painot = solmu.lasten_todennakoisyydet()
                 sana = random.choices(
                     list(lapset.keys()), weights=painot, k=1)[0]

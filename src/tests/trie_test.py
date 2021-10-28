@@ -30,7 +30,8 @@ class TestTrie(unittest.TestCase):
         self.puu_korkeampi_aste.lisaa_tekstia(self.teksti2)
         vastaus = self.puu_korkeampi_aste.hae_puu()
 
-        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'on': {'mennyt': {}}}, 'kuka': {'muu': {'siellä': {'olisi': {}}}}, 'olen': {'iso': {'musta': {'kissa': {'joka': {}}}}}, 'iso': {'musta': {'kissa': {'joka': {'lähti': {}}}}}, 'musta': {'kissa': {'joka': {'lähti': {'retkeilemään': {}}}}}})
+        self.assertEqual(vastaus, {'hei': {'siellä': {}}, 'miten': {'on': {'mennyt': {}}}, 'kuka': {'muu': {'siellä': {'olisi': {}}}}, 'olen': {'iso': {
+                         'musta': {'kissa': {'joka': {}}}}}, 'iso': {'musta': {'kissa': {'joka': {'lähti': {}}}}}, 'musta': {'kissa': {'joka': {'lähti': {'retkeilemään': {}}}}}})
 
     def test_lisaa_tekstia_ei_lisaa_kaksoiskappaleita(self):
         self.puu.lisaa_tekstia(self.teksti1)
