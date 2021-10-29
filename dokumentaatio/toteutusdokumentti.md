@@ -63,7 +63,7 @@ function hae_lapsi(sana)
   else:
     return None
 ```
-Alla on pseudokoodi lauseenmuodostuksesta. Solmun tyhjyyden tarkistamisen aikavaatimus on O(1), join on O(_n_) jossa _n_ = lause_merkkijonona pituus.:
+Alla on pseudokoodi lauseenmuodostuksesta. Solmun tyhjyyden tarkistamisen aikavaatimus on O(1), join on O(_n_) jossa _n_ = lause_merkkijonona pituus. Sanan valitsemisen aikavaativuus on pahimmillaan O(2_t_), jossa _t_ = triepuun kaikkien solmujen lukumäärä. Niinpä lauseenmuodostuksen aikavaativuus on O(2 _mt_) jossa _m_ on lauseen haluttu pituus sanoina:
 ```
 function muodosta_lause(trie, pituus)
   lause = []
@@ -80,7 +80,7 @@ function muodosta_lause(trie, pituus)
       lause_merkkijonona = upper(lause_merkkijonna[0]) + lause_merkkijonona[1:] + "."
   return lause_merkkijonona        
 ```
-Alla on pseudokoodi sanan valitsemisesta. Randomin aikavaatimus on O(1), ja solmun hakemisen, ja solmun lasten todennäköisyyksien hakemisen aikavaativuus on O(_c_) jossa _c_ = kaikkien kyseisen solmun jälkeläisten määrä, ja tämähän saattaa vaihdella hyvinkin paljon. Jos triepuun koko (eli kaikkien solmujen määrä) on _t_, niin _c_=_t_ tai _c_ < _t_. Aikavaativuus on pahimmillaan siis O(2_t_):
+Alla on pseudokoodi sanan valitsemisesta. Randomin aikavaatimus on O(1), ja solmun hakemisen, ja solmun lasten todennäköisyyksien hakemisen aikavaativuus on O(_c_) jossa _c_ = kaikkien kyseisen solmun jälkeläisten määrä, ja tämähän saattaa vaihdella hyvinkin paljon. Jos triepuun koko (eli kaikkien solmujen määrä) on _t_, niin _c_=_t_ tai _c_ < _t_. Aikavaativuus on pahimmillaan siis O(2 _t_):
 ```
 function valitse_sana(lause)
   solmu = trie
@@ -114,7 +114,7 @@ function paivita_laskuri()
     summa = summa + lapset[lapsi].hae_solmu()[0]
   laskuri = maximum(summa, laskuri)
 ```
-Ohjelmaa suoritettaessa tehdään uusi triepuu, johon lisätään tekstiä, ja josta sitten etsitään lause. Aikavaativuus ohjelman suoritukselle on siis maksimissaan O(_vnk_) + O(2_t_), jossa _v_ = virkkeiden lukumäärä, _n_ = virkkeessä olevien sanojen lukumäärä ja _k_ = n-tallennuspituus ja _t_ on trien kaikkien solmujen lukumäärä.
+Ohjelmaa suoritettaessa tehdään uusi triepuu, johon lisätään tekstiä, ja josta sitten etsitään lause. Aikavaativuus ohjelman suoritukselle on siis maksimissaan O(_vnk_) + O(2 _mt_), jossa _v_ = virkkeiden lukumäärä, _n_ = virkkeessä olevien sanojen lukumäärä ja _k_ = n-tallennuspituus, _t_ on trien kaikkien solmujen lukumäärä ja _m_ on generoitavan lauseen haluttu pituus.
 
 ## Puutteet ja parannusehdotukset
 * Aikavaatimusta tekstiä lisätessä voisi varmasti saada pienemmäksikin, mutta allekirjoittanut ei saanut tätä tehtyä ongelmitta.
